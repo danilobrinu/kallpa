@@ -26,11 +26,15 @@ function animatePages(e) {
 		hiddenPage = null;
 	if (e.data.type == 'previous') {
 		animatedBoxes('.current-page', '100%');
-		animatedBoxes('.previous-page', '0%');
+		setTimeout(function() {
+			animatedBoxes('.previous-page', '0%');
+		}, 150);
 		idHiddenPage = previousPage.data('page') > 1 ? (previousPage.data('page') - 1) : 5;
 	} else {
 		animatedBoxes('.current-page', '-100%');
-		animatedBoxes('.next-page', '0%');
+		setTimeout(function() {
+			animatedBoxes('.next-page', '0%');
+		}, 150);
 		idHiddenPage = nextPage.data('page') < pagesNumber ? (nextPage.data('page') + 1) : 1;
 	}
 	hiddenPage = $('.page[data-page=' + idHiddenPage + ']');
