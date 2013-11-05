@@ -8,7 +8,7 @@ function animatedBoxes(page, left) {
 	$(page + ' .animated-box').each(function(index) {
 		$(this).animate({
 			left: left
-		}, 500 + (index * 50), 'easeInExpo');
+		}, 500 + (index * 300), 'easeInExpo');
 	});
 }
 /**
@@ -46,7 +46,7 @@ function animatePages(e) {
 		currentPage.removeClass('current-page').addClass(e.data.currentPageToggle);
 		nextPage.removeClass('next-page').addClass(e.data.nextPageToggle);
 		hiddenPage.removeClass('hidden-page').addClass(e.data.hiddenPageToggle);
-	}, 700);
+	}, 800);
 	/**
 	 * prevent to reset default css all .animated-box
 	 */
