@@ -71,3 +71,11 @@ $('.body__layout__nav__trigger--next-page').on('click',  {
 	nextPageToggle: 'current-page',
 	hiddenPageToggle: 'next-page'
 }, animatePages);
+// run on load
+$(window).on('load', {
+	type: 'next',
+	previousPageToggle: 'hidden-page',
+	currentPageToggle: 'previous-page',
+	nextPageToggle: 'current-page',
+	hiddenPageToggle: 'next-page'
+}, animatePages);
