@@ -79,7 +79,7 @@ a { text-decoration: none; }
 .header .nav-bar>li { margin-left: 13px; padding-top: 10px; -webkit-transition: all .3s; -moz-transition: all .3s; -o-transition: all .3s; transition: all .3s; }
 .header .nav-bar>li>a { color: #555; }
 .header .nav-bar>li>div { display: none; position: absolute; width: 120px; padding-top: 8px; left: 50%; margin-left: -60px; font-size: .875em; text-transform: none; font-weight: 400; }
-.header .nav-bar>li>div>ul { padding: 10px 0; border-top: 3px solid  #111224; background: #111224; background: rgba(11, 11, 49, 0.4); }
+.header .nav-bar>li>div>ul { padding: 10px 0; border-top: 3px solid  #111224; background: #111224; background: rgba(11, 11, 49, .8); }
 .header .nav-bar>li>div>ul li { display: block; padding: 3px 10px; }
 .header .nav-bar>li>div>ul li>a { color: #fff; }
 .header .nav-bar>li>div ul:before { content: ''; position: absolute; top: -8px; left: 50%; margin-left: -6px; width: 0; height: 0; border-left: 6px solid transparent; border-right: 6px solid transparent; border-bottom: 8px solid #111224; }
@@ -203,6 +203,58 @@ a { text-decoration: none; }
 .sea-nuestro-cliente article:nth-child(2)>div>div .ver-mas,
 .sea-nuestro-cliente article:nth-child(3)>div>div .ver-mas,
 .sea-nuestro-cliente article:last-child>div>div .ver-mas { margin-left: 20px; }
+/* ==== pagina - login ==== */
+.login { margin-bottom: 30px; }
+.login>div:first-child { height: 40px; line-height: 40px; background-color: #dfdfdf; }
+.login>div:first-child>span { padding-left: 30px; color: #111224; line-height: 1; font-weight: 400; }
+.login>div:first-child>span>img { margin-left: 5px; vertical-align: -2px; }
+.login>div:last-child { position: relative; }
+.login>div:last-child>div:first-child { font-size: 0; }
+.login>div:last-child>div:last-child { position: absolute; top: 0; right: 0; width: 370px; height: 100%; background-color: #0f314d; }
+.login>div:last-child>div:last-child>.form { position: absolute; top: 10px; left: 90px; color: #fff; }
+.login>div:last-child>div:last-child>.form>.form-group { margin: 15px 0; }
+.login>div:last-child>div:last-child>.form>.form-group>span { float: left; width: 50px; text-align: right; padding-right: 10px; font-weight: 700; }
+.login>div:last-child>div:last-child>.form>.form-group>input { background-color: #fff; padding: 5px; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; border: 0; }
+.login>div:last-child>div:last-child>.form>.keyboard-virtual { padding-left: 50px; }
+.login>div:last-child>div:last-child>.form>.keyboard-virtual>p { font-weight: 700; }
+.login>div:last-child>div:last-child>.form>.keyboard-virtual>.keyboard { width: 105px; float: left; }
+.login>div:last-child>div:last-child>.form>.keyboard-virtual>.keyboard>div { float: left; padding: 5px; margin: 2px; background-color: #76ac32; cursor: pointer; }
+.login>div:last-child>div:last-child>.form>.keyboard-virtual>.buttons { float: right; margin-right: 15px; }
+.login>div:last-child>div:last-child>.form>.keyboard-virtual>.buttons>button { display: block; background-color: #fff; border: 0; padding: 3px 5px; }
+.login>div:last-child>div:last-child>.form>.keyboard-virtual>.buttons>button:first-child { margin-top: 2px; } 
+.login>div:last-child>div:last-child>.form>.keyboard-virtual>.buttons>button:last-child { margin-top: 5px; }
+.login>div:last-child>div:last-child>.form>.keyboard-virtual>.buttons>button>img { max-width: -2px; }
+/* ==== pagina - nosotros detalles ==== */
+.nosotros-detalles { margin-bottom: 30px; }
+.nosotros-detalles>div:first-child { height: 40px; line-height: 40px; background-color: #dfdfdf; padding-left: 30px; font-weight: 400; }
+.nosotros-detalles>div:first-child>a {  color: #111224; padding: 5px 10px; }
+.nosotros-detalles>div:first-child>a>span>img { margin-left: 5px; vertical-align: -2px; }
+.nosotros-detalles>div:first-child>a.active { color: #fff; background: #738AA0; }
+.nosotros-detalles>.banner>div>div:first-child { float: left; width: 600px; overflow: hidden; }
+.nosotros-detalles>.banner>div>div:last-child { position: absolute; right: 0; width: 360px; }
+.nosotros-detalles>.banner>div>div:last-child>.links { position: absolute; width: 100%; height: 1px; top: 70%; }
+.nosotros-detalles>.banner>div>div:last-child>.links>a:first-child { float: left; color: #fff; }
+.nosotros-detalles>.banner>div>div:last-child>.links>a:last-child { float: right; color: #fff; }
+.nosotros-detalles>.banner>div>div:last-child>.links>a>img { float: left; margin: 0 10px; margin-top: 8px; }
+.nosotros-detalles>.banner>div>div:last-child>.links>a>span { float: left; line-height: 1; }
+.nosotros-detalles>.banner>div>div:last-child>.links>a>span>h2,
+.nosotros-detalles>.banner>div>div:last-child>.links>a>span>p { margin: 0; }
+/* nosotros contenido */
+.nosotros-detalles>.content { position: relative; }
+.nosotros-detalles>.content>div:first-child { width: 600px; height: 500px; background-color: #d4d7da; }
+.nosotros-detalles>.content>div:first-child>div { padding: 20px; color: #111224; }
+.nosotros-detalles>.content>div:first-child>div>h2,
+.nosotros-detalles>.content>div:first-child>div>p { margin: 0; }
+.nosotros-detalles>.content>div:first-child>div>p { margin-bottom: 25px; font-weight: 400; }
+.nosotros-detalles>.content>div:last-child { position: absolute; top: 0; right: 0; width: 360px; height: 100%; background-color: #BBB; }
+.nosotros-detalles>.content>div:last-child>div:first-child { font-size: 0; }
+.nosotros-detalles>.content>div:last-child>div:last-child>div:first-child { padding: 15px 20px 15px 25px; }
+.nosotros-detalles>.content>div:last-child>div:last-child>hr { width: 70%; margin: 0 auto; height: 1px; border: 0; background-color: #111224; } 
+.nosotros-detalles>.content>div:last-child>div:last-child>div:last-child { padding: 15px 20px 15px 25px; }
+.nosotros-detalles>.content>div:last-child>div>div>h3,
+.nosotros-detalles>.content>div:last-child>div>div>p { margin: 0; }
+.nosotros-detalles>.content>div:last-child>div:last-child>div:last-child>div>div { float: right; width: 150px; height: 100px; overflow: hidden; }
+.nosotros-detalles>.content>div:last-child>div:last-child>div:last-child>div>div>img { float: left; }
 
 /***************************
  *          Theme          *
