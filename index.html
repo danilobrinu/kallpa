@@ -15,9 +15,9 @@
 <body>
   <!-- kallpa - header 
 ================================== -->
-  <header class="wrapper header">
+  <header class="wrapper header clearfix">
     <div class="clearfix">
-      <img src="img/logo.jpg" alt="">
+      <a href="/"><img src="img/logo.jpg" alt=""></a>
       <nav>
         <ul class="list list--inline help-links" style="text-align: right;">
           <li><a href="#favoritos">Favoritos</a></li>
@@ -27,8 +27,8 @@
           <li><a href="#idioma"><img src="img/idioma.jpg" alt=""></a></li>
         </ul>
         <ul class="list list--inline nav-bar">
-          <li class="active">
-            <a href="#nosotros">nosotros</a>
+          <li>
+            <a href="nosotros-detalles.html">nosotros</a>
             <div>
               <ul class="list">
                 <li><a href="#">- La empresa</a></li>
@@ -60,8 +60,47 @@
     <nav class="nav-bar"> 
       <div id="previousTransitionButton"></div>
       <div id="nextTransitionButton"></div>
-    </nav>      
-    <div class="page previousPage inicio clearfix" data-page="1">
+    </nav>
+    <div class="page previousPage sea-nuestro-cliente clearfix" data-page="4">
+      <article class="transitionElement col col--full">
+        <img src="img/sea-nuestro-cliente.jpg" alt="" class="img-full">
+        <div>
+          <h1>sea nuestro cliente</h1>
+          <p>Asesoría integral a nuestros clientes por parte de nuestros especialistas</p>
+        </div>
+      </article>
+      <article class="transitionElement col col--1x3">
+        <div><img src="img/sea-nuestro-cliente-nosotros.jpg" alt="" class="img-full"></div>
+        <div>
+          <div>
+            <h2>Nosotros</h2>
+            <p>Kallpa Securities Sociedad Agente de Bolsa es una socidad anónima que se dedica a la compra/venta de instrumentos financieros en el mercado de valores peruano e internacional y a la banca de inversión en general.</p>
+            <a href="" class="ver-mas">ver más</a>
+          </div>
+        </div>
+      </article>
+      <article class="transitionElement col col--1x3">
+        <div><img src="img/personas-naturales.jpg" alt="" class="img-full"></div>
+        <div>
+          <div>
+            <h2>Personas naturales</h2>
+            <p>Kallpa Securities Sociedad Agente de Bolsa es una empresa que se dedica a la banca de inversión.</p>
+            <a href="" class="ver-mas">ver más</a>
+          </div>
+        </div>
+      </article>
+      <article class="transitionElement col col--1x3">
+        <div><img src="img/personas-juridicas.jpg" alt="" class="img-full"></div>
+        <div>
+          <div>
+            <h2>Personas jurídicas</h2>
+            <p>Kallpa Securities Sociedad Agente de Bolsa es una socidad anónima que se dedica a la compra/venta de instrumentos financieros en el mercado de valores peruano e internacional y a la banca de inversión en general.</p>
+            <a href="" class="ver-mas">ver más</a>
+          </div>
+        </div>
+      </article>
+    </div>      
+    <div class="page currentPage inicio clearfix" data-page="1">
       <article class="transitionElement col col--full clearfix">
         <img src="img/principal.jpg" alt="" class="img-full">
         <div>
@@ -79,7 +118,7 @@
         </div>
       </article>
       <nav class="transitionElement col col--full">
-        <ul class="list list--inline clearfix" style="">
+        <ul class="list list--inline clearfix" style="position: absolute;">
             <li>
                 <div>
                     <span>igbvl 15.816.68</span>
@@ -87,6 +126,30 @@
                 </div>
             </li>
             <li class="down">
+                <div>
+                    <span>igbvl 15.816.68</span>
+                    <small>(+0.16%)</small>
+                </div>
+            </li>
+            <li>
+                <div>
+                    <span>igbvl 15.816.68</span>
+                    <small>(+0.16%)</small>
+                </div>
+            </li>
+            <li>
+                <div>
+                    <span>igbvl 15.816.68</span>
+                    <small>(+0.16%)</small>
+                </div>
+            </li>
+            <li>
+                <div>
+                    <span>igbvl 15.816.68</span>
+                    <small>(+0.16%)</small>
+                </div>
+            </li>
+            <li>
                 <div>
                     <span>igbvl 15.816.68</span>
                     <small>(+0.16%)</small>
@@ -255,7 +318,7 @@
         </div>
       </article>
     </div>
-    <div class="page currentPage nosotros clearfix" data-page="2">
+    <div class="page nextPage nosotros clearfix" data-page="2">
       <article class="transitionElement col col--full">
         <img src="img/nosotros.jpg" alt="" class="img-full">
         <div>
@@ -294,7 +357,7 @@
         </div>
       </article>
     </div>
-    <div class="page nextPage sea-nuestro-cliente clearfix" data-page="3">
+    <div class="page hiddenPage sea-nuestro-cliente clearfix" data-page="3">
       <article class="transitionElement col col--full">
         <img src="img/sea-nuestro-cliente.jpg" alt="" class="img-full">
         <div>
@@ -303,7 +366,7 @@
         </div>
       </article>
       <article class="transitionElement col col--1x3">
-        <div><img src="img/sea-nuestro-cliente-nosotros.jpg" alt=""></div>
+        <div><img src="img/sea-nuestro-cliente-nosotros.jpg" alt="" class="img-full"></div>
         <div>
           <div>
             <h2>Nosotros</h2>
@@ -313,7 +376,7 @@
         </div>
       </article>
       <article class="transitionElement col col--1x3">
-        <div><img src="img/personas-naturales.jpg" alt=""></div>
+        <div><img src="img/personas-naturales.jpg" alt="" class="img-full"></div>
         <div>
           <div>
             <h2>Personas naturales</h2>
@@ -323,7 +386,7 @@
         </div>
       </article>
       <article class="transitionElement col col--1x3">
-        <div><img src="img/personas-juridicas.jpg" alt=""></div>
+        <div><img src="img/personas-juridicas.jpg" alt="" class="img-full"></div>
         <div>
           <div>
             <h2>Personas jurídicas</h2>
@@ -333,45 +396,7 @@
         </div>
       </article>
     </div>
-    <div class="page hiddenPage sea-nuestro-cliente clearfix" data-page="4">
-      <article class="transitionElement col col--full">
-        <img src="img/sea-nuestro-cliente.jpg" alt="" class="img-full">
-        <div>
-          <h1>sea nuestro cliente</h1>
-          <p>Asesoría integral a nuestros clientes por parte de nuestros especialistas</p>
-        </div>
-      </article>
-      <article class="transitionElement col col--1x3">
-        <div><img src="img/sea-nuestro-cliente-nosotros.jpg" alt=""></div>
-        <div>
-          <div>
-            <h2>Nosotros</h2>
-            <p>Kallpa Securities Sociedad Agente de Bolsa es una socidad anónima que se dedica a la compra/venta de instrumentos financieros en el mercado de valores peruano e internacional y a la banca de inversión en general.</p>
-            <a href="" class="ver-mas">ver más</a>
-          </div>
-        </div>
-      </article>
-      <article class="transitionElement col col--1x3">
-        <div><img src="img/personas-naturales.jpg" alt=""></div>
-        <div>
-          <div>
-            <h2>Personas naturales</h2>
-            <p>Kallpa Securities Sociedad Agente de Bolsa es una empresa que se dedica a la banca de inversión.</p>
-            <a href="" class="ver-mas">ver más</a>
-          </div>
-        </div>
-      </article>
-      <article class="transitionElement col col--1x3">
-        <div><img src="img/personas-juridicas.jpg" alt=""></div>
-        <div>
-          <div>
-            <h2>Personas jurídicas</h2>
-            <p>Kallpa Securities Sociedad Agente de Bolsa es una socidad anónima que se dedica a la compra/venta de instrumentos financieros en el mercado de valores peruano e internacional y a la banca de inversión en general.</p>
-            <a href="" class="ver-mas">ver más</a>
-          </div>
-        </div>
-      </article>
-    </div>
+    
   </section>
   <!-- kallpa - footer 
 ================================== -->

@@ -47,7 +47,7 @@ function transition(e) {
     /**
      * fix height body
      */
-    $('.body').css({height: $previousPage.height()});
+    $('.body').css({height: $(window).width() > 980 ? $previousPage.height() : 1600});
     /**
      * transition and update id of hidden page
      */
@@ -57,7 +57,7 @@ function transition(e) {
     /**
      * fix height body
      */
-    $('.body').css({height: $nextPage.height()});
+    $('.body').css({height: $(window).width() > 980 ? $nextPage.height() : 1600});
     /**
      * transition and update id of hidden page
      */
@@ -67,17 +67,40 @@ function transition(e) {
   transitionUpdate(effectTime * 2.5);
 }
 
-$('#previousTransitionButton').on('click', {
-  reverse: true,
-  exchangePreviousPage: 'currentPage',
-  exchangeCurrentPage: 'nextPage',
-  exchangeNextPage: 'hiddenPage',
-  exchangeHiddenPage: 'previousPage'
-}, transition);
+//if ($(window).width() > 980) {
+  $('#previousTransitionButton').on('click', {
+    reverse: true,
+    exchangePreviousPage: 'currentPage',
+    exchangeCurrentPage: 'nextPage',
+    exchangeNextPage: 'hiddenPage',
+    exchangeHiddenPage: 'previousPage'
+  }, transition);
 
-$('#nextTransitionButton').on('click', {
-  exchangePreviousPage: 'hiddenPage',
-  exchangeCurrentPage: 'previousPage',
-  exchangeNextPage: 'currentPage',
-  exchangeHiddenPage: 'nextPage'
-}, transition);
+  $('#nextTransitionButton').on('click', {
+    exchangePreviousPage: 'hiddenPage',
+    exchangeCurrentPage: 'previousPage',
+    exchangeNextPage: 'currentPage',
+    exchangeHiddenPage: 'nextPage'
+  }, transition);
+//}
+function transitionMarquesine() {
+  var w = 0;
+  $('.inicio>nav>ul li').css('width', 170);
+  $('.inicio>nav>ul').css('width', ($('.inicio>nav>ul li').length * 170) < 960 ? 960 : $('.inicio>nav>ul li').length * 170);
+  setTimeout(function() {
+    $('.inicio>nav>ul').animate({
+      left: 960 - $(this).width()
+    }, 4 * 1000);
+  }, 1000);
+  setInterval(function() {
+    $('.inicio>nav>ul').animate({
+      left: 960 - $(this).width()
+    }, 4 * 1000).animate({
+      left: 0
+    }, 0);
+  }, 4 * 1000);
+}
+
+if ($(window).width() > 980) {
+  transitionMarquesine();
+}

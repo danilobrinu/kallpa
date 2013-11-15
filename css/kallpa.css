@@ -46,13 +46,13 @@ a { text-decoration: none; }
  */
 
 .body { min-height: 640px; }
-.wrapper { position: relative; width: 960px; margin: 0 auto; overflow: hidden; }
+.wrapper { position: relative; max-width: 960px; margin: 0 auto; overflow: hidden; }
 .img-full { width: 100%; }
 .col { position: relative; float: left; overflow: hidden; }
-.col--1x3 { width: 320px; }
-.col--1x2 { width: 480px; }
-.col--2x3 { width: 640px; }
-.col--full { width: 960px; }
+.col--1x3 { width: 33.3333333333%; }
+.col--1x2 { width: 50%; }
+.col--2x3 { width: 66.6666666666%; }
+.col--full { width: 100%; }
 
 .currentPage .col { left: 0; }
 .previousPage .col { left: -960px; }
@@ -100,7 +100,7 @@ a { text-decoration: none; }
 .inicio article:first-child>div>div { margin: 16px; padding: 24px 20px 2px 24px; background: #111224; background: rgba(11, 11, 49, 0.4); }
 .inicio article:first-child>div>div .btn-ingreso { display: block; width: 190px; height: 53px; background: url(../img/btn-ingresar.jpg) 0 0 no-repeat; }
 /* marquesina */
-.inicio nav { height: 42px; margin-bottom: 30px; }
+.inicio>nav { height: 42px; margin-bottom: 30px; }
 .inicio nav>ul { text-transform: uppercase; margin: 0 69px; background-color: #efefef; margin-top: 1px; }
 .inicio nav>ul li { float: left; display: block; position: relative; width: 16.6666666667%; background: url(../img/up.jpg) no-repeat 9px 12px; }
 .inicio nav>ul li>div { height: 39px; padding: 5px 0 0 25px; border-left: 1px solid  #fff; }
@@ -270,3 +270,62 @@ a { text-decoration: none; }
 .header .nav-bar>li:hover { border-top: 5px solid #76ac32; }
 .header .nav-bar>li>div>ul li:hover { background-color: #fff; background-color: rgba(255,255,255,.5); }
 .header .nav-bar>li>div>ul li:hover>a { color: #111224; }
+
+
+/**
+ * Responsive
+ */
+@media (max-width: 900px) {
+  .header .help-links {
+    margin-right: 10px;
+  }
+  .header .nav-bar {
+    width: 320px;
+    margin-top: 13px;
+    margin-right: 10px; 
+    text-align: right;   
+  }
+  .header .nav-bar li:hover {
+    border: 0;
+  }
+  .header .nav-bar li:hover>div { display: none; }
+  .body>.nav-bar { top: 335px; }
+  .col {
+    width: 100%;
+    height: auto !important;
+  }
+  .inicio .faq {
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .page article:first-child {
+    height: 300px !important;
+  }
+  .page article:first-child>img {
+    width: initial;
+    height: 100%;
+  }
+  .nosotros>.col,
+  .sea-nuestro-cliente>.col {
+    height: auto;
+  }
+  .inicio .indicators,
+  .inicio .events { 
+    margin-left: 5%;
+  }
+  .inicio>nav {
+    width: 960px;
+  }
+}
+@media (max-width: 768px) {
+  .header>div>nav {
+    position: relative;
+  }
+  .header>div>nav .nav-bar {
+    width: initial;
+  }
+}
+@media (max-width: 320px) {
+  .col { width: 320px; }
+}
