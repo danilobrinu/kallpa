@@ -32,31 +32,31 @@
               <a href="#">nosotros</a>
               <div class="sub-links">
                 <ul class="list">
-                  <li><a href="#">- La empresa</a></li>
-                  <li><a href="#">- Que ofrecemos</a></li>
-                  <li><a href="#">- Nuestros expertos</a></li>
+                  <li><a href="nosotros.html">- La empresa</a></li>
+                  <li><a href="nosotros-que-ofrecemos.html">- Que ofrecemos</a></li>
+                  <li><a href="nosotros-nuestros-expertos.html">- Nuestros expertos</a></li>
                 </ul>
               </div>
             </li><!--
             --><li>
               <a href="#">nuestros productos</a>
-              <div class="sub-links">
+              <!--div class="sub-links">
                 <ul class="list">
                   <li><a href="#">Lorem ipsum</a></li>
                   <li><a href="#">Lorem ipsum dolor</a></li>
                   <li><a href="#">Lorem</a></li>
                   <li><a href="#">Lorem ipsum</a></li>
                 </ul>
-              </div>
+              </div-->
             </li><!--
             --><li>
               <a href="#">research</a>
               <div class="sub-links">
                 <ul class="list">
-                  <li><a href="#">- Informes periódicos</a></li>
-                  <li><a href="#">- Reportes de valorización</a></li>
-                  <li><a href="#">- Presentaciones</a></li>
-                  <li><a href="#">- Research en medios</a></li>
+                  <li><a href="reportes-recurrentes.html">- Reportes Recurrentes</a></li>
+                  <li><a href="reportes-valorizacion.html">- Reportes de Valorización</a></li>
+                  <li><a href="presentaciones.html">- Presentaciones</a></li>
+                  <li><a href="research-medios.html">- Research en medios</a></li>
                 </ul>
               </div>
             </li><!--
@@ -64,9 +64,9 @@
               <a href="#">contactenos</a>
               <div class="sub-links">
                 <ul class="list">
-                  <li><a href="#">- Teléfonos</a></li>
-                  <li><a href="#">- Direcciones</a></li>
-                  <li><a href="#">- Oportunidades</a></li>
+                  <li><a href="contacto-telefono.html">- Teléfonos</a></li>
+                  <li><a href="contacto-direcciones.html">- Direcciones</a></li>
+                  <li><a href="contacto-oportunidades.html">- Oportunidades</a></li>
                 </ul>
               </div>
             </li><!--
@@ -89,11 +89,11 @@
     <section class="section">
       <div class="group">
         <nav class="nav-bar"> 
-          <div id="previousTransitionButton"></div>
-          <div id="nextTransitionButton"></div>
+          <div id="previousTransitionButton" data-page="previousPage"></div>
+          <div id="nextTransitionButton" data-page="nextPage"></div>
         </nav>
         <!--<article class="page our-products previousPage" data-index="-1"></article>-->
-        <article class="page home currentPage" data-index="1">
+        <article class="page home currentPage" data-index="1" data-name="INICIO">
           <div class="group header">
             <div class="col span-12-of-12 transitionElement">
               <div class="image">
@@ -287,7 +287,7 @@
             </div>
           </div>
         </article>
-        <article class="page us nextPage" data-index="2">
+        <article class="page us nextPage" data-index="2" data-name="NOSOTROS">
           <div class="group header">
             <div class="col span-12-of-12 transitionElement">
               <div class="image">
@@ -305,7 +305,7 @@
               <div class="text">
                 <h2>La empresa</h2>
                 <p>Kallpa Securities Sociedad Agente de Bolsa es una sociedad anónima que se dedica a la compra/venta de instrumentos financieros en el mercado de valores peruano e internacional y a la banca de inversiones en general.</p>
-                <a href="#" class="view-more">ver más</a>
+                <a href="nosotros.html" class="view-more">ver más</a>
               </div>
             </div>
             <div class="col span-4-of-12 no-margin transitionElement">
@@ -313,7 +313,7 @@
               <div class="text">
                 <h2>Que ofrecemos</h2>
                 <p>Kallpa Securities Sociedad Agente de Bolsa tiene cuatro gerencias.</p>
-                <a href="#" class="view-more" style="display: inline-block; margin-top: 15px;">ver más</a>
+                <a href="nosotros-que-ofrecemos.html" class="view-more" style="display: inline-block; margin-top: 15px;">ver más</a>
               </div>
             </div>
             <div class="col span-4-of-12 no-margin transitionElement">
@@ -321,12 +321,12 @@
               <div class="text" style="">
                 <h2>Nuestros expertos</h2>
                 <p>Kallpa Securities Sociedad Agente de Bolsa les presenta a continuación a nuestros directores y accionistas, así como nuestro organigrama institucional.</p>
-                <a href="#" class="view-more">ver más</a>
+                <a href="nosotros-nuestros-expertos.html" class="view-more">ver más</a>
               </div>
             </div>
           </div>
         </article>
-        <article class="page research hiddenPage" data-index="3">
+        <article class="page research hiddenPage" data-index="3" data-name="RESEARCH">
           <div class="group header">
             <div class="col span-12-of-12 transitionElement">
               <div class="image"><img src="img/research.jpg" alt="RESEARCH" class="img-full"></div>
@@ -342,7 +342,7 @@
               <div class="text">
                 <h2>Informes periódicos</h2>
                 <p>A través de nuestros (reportes recurrentes) los clientes de Kallpa SAB reciben a diario un vistazo rápido y conciso sobre el desempeño de los mercados globales.</p>
-                <a href="#" class="view-more">ver más</a>
+                <a href="reportes-recurrentes.html" class="view-more">ver más</a>
               </div>
             </div>
             <div class="col span-3-of-12 no-margin transitionElement">
@@ -350,7 +350,7 @@
               <div class="text">
                 <h2>Reportes de valorización</h2>
                 <p>Kallpa SAB recomienda acciones en base a sus fundamentos.</p>
-                <a href="#" class="view-more">ver más</a>
+                <a href="reportes-valorizacion.html" class="view-more">ver más</a>
               </div>
             </div>
             <div class="col span-3-of-12 no-margin transitionElement">
@@ -358,7 +358,7 @@
               <div class="text">
                 <h2>Presentaciones</h2>
                 <p>Kallpa Securities Sociedad Agente de Bolsa es una sociedad anónima que se dedica a la compra/venta de instrumentos financieros en el mercado.</p>
-                <a href="#" class="view-more">ver más</a>
+                <a href="presentaciones.html" class="view-more">ver más</a>
               </div>
             </div>
             <div class="col span-3-of-12 no-margin transitionElement">
@@ -366,12 +366,12 @@
               <div class="text">
                 <h2>Research en medios</h2>
                 <p>Nuestro equipo de Research tiene presencia activa en los medios de comunicación, emitiendo comentarios u opiniones respecto a temas de mercado.</p>
-                <a href="#" class="view-more">ver más</a>
+                <a href="research-medios.html" class="view-more">ver más</a>
               </div>
             </div>
           </div>
         </article>
-        <article class="page contact hiddenPage" data-index="4">
+        <article class="page contact hiddenPage" data-index="4" data-name="CONTÁCTENOS">
           <div class="group header">
             <div class="col span-12-of-12 transitionElement">
               <div class="image"><img src="img/contacto.jpg" alt="CONTACTENOS" class="img-full"></div>
@@ -387,7 +387,7 @@
               <div class="text">
                 <h2>Teléfonos</h2>
                 <p>Kallpa Securities Sociedad Agente de Bolsa es una sociedad anónima que se dedica a la compra/venta de instrumentos financieros en el mercado de valores peruano e internacional y a la banca de inversión en general.</p>
-                <a href="#" class="view-more">ver más</a>
+                <a href="contacto-telefono.html" class="view-more">ver más</a>
               </div>
             </div>
             <div class="col span-4-of-12 no-margin transitionElement">
@@ -395,7 +395,7 @@
               <div class="text">
                 <h2>Dirección</h2>
                 <p>Kallpa Securities Sociedad Agente de Bolsa es una empresa que se dedica a la banca de inversión.</p>
-                <a href="#" class="view-more">ver más</a>
+                <a href="contacto-direcciones.html" class="view-more">ver más</a>
               </div>
             </div>
             <div class="col span-4-of-12 no-margin transitionElement">
@@ -403,12 +403,12 @@
               <div class="text">
                 <h2>Oportunidades</h2>
                 <p>Kallpa Securities Sociedad Agente de Bolsa es una sociedad anónima que se dedica a la compra/venta de instrumentos financieros en el mercado de valores peruano e internacional y a la banca de inversión en general.</p>
-                <a href="#" class="view-more">ver más</a>
+                <a href="contacto-oportunidades.html" class="view-more">ver más</a>
               </div>
             </div>
           </div>
         </article>
-        <article class="page be-our-client previousPage" data-index="5">
+        <article class="page be-our-client previousPage" data-index="5" data-name="SEA NUESTRO CLIENTE">
           <div class="group header">
             <div class="col span-12-of-12 transitionElement">
               <div class="image"><img src="img/sea-nuestro-cliente.jpg" alt="SEA NUESTRO CLIENTE" class="img-full"></div>

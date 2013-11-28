@@ -1,5 +1,18 @@
 (function(){var method;var noop=function(){};var methods=["assert","clear","count","debug","dir","dirxml","error","exception","group","groupCollapsed","groupEnd","info","log","markTimeline","profile","profileEnd","table","time","timeEnd","timeStamp","trace","warn"];var length=methods.length;var console=window.console=window.console||{};while(length--){method=methods[length];if(!console[method])console[method]=noop}})();
 /**
+ * hover animation to transition buttons
+ */
+var $previousTransitionButton = $('#previousTransitionButton');
+var $nextTransitionButton = $('#nextTransitionButton');
+var hoverTransitionHandler = function() {
+  $(this).addClass('hovered').text($('.' + $(this).data('page')).data('name'));
+};
+var hoverTransitionClear = function() {
+  $(this).removeClass('hovered').text('');
+};
+$previousTransitionButton.hover(hoverTransitionHandler, hoverTransitionClear);
+$nextTransitionButton.hover(hoverTransitionHandler, hoverTransitionClear);
+/**
  * core of animation
  */
 function transition(e) {
@@ -13,7 +26,7 @@ function transition(e) {
     $(page + ' .transitionElement').delay(delay).each(function(index) {
       $(this).animate({
         left: left
-      }, time + (additionalTimeSign * (index * time / 6 ) ), ease);
+      }, time + (additionalTimeSign * (index * time / 6)), ease);
     });
   };
   var effectTime = 500,
@@ -42,6 +55,9 @@ function transition(e) {
       resetTransition();
     }, delay);
   };
+  var hoverTransitionClear = function() {
+    $('#' + e.currentTarget.id).removeClass('hovered').text('');
+  };
   if (e.data.reverse == true) {
     previousTransition();
     hiddenPageID = $previousPage.data('index') > 1 ? ($previousPage.data('index') - 1) : pagesNumber;
@@ -50,8 +66,44 @@ function transition(e) {
     hiddenPageID = $nextPage.data('index') < pagesNumber ? ($nextPage.data('index') + 1) : 1;
   }
   transitionUpdate(effectTime * 2.5);
-  console.log($previousPage.data('index'));
+  /**
+   * hover transition clear
+   */
+  hoverTransitionClear();  
 }
+/**
+ * core animation marquesine
+ */
+var marquesineAnimation =  function() {
+  var $marquesine = $('.home>.marquesine>ul');
+  $marquesine.css({
+    width: $marquesine.find('li').length * 130
+  });
+  var effectTime = 6 * 1000;
+  var delay = 500;
+  var effect =  function() {
+    $marquesine
+      .animate({
+        left: $marquesine.parent().width() - $marquesine.width() - 138
+      }, effectTime)
+      .animate({
+        left: 0
+      }, delay / 2);
+  };
+  setTimeout(function(){
+    effect();
+    setInterval(function(){
+      if ($('.home').hasClass('currentPage')) {
+        effect();
+      }
+    }, effectTime + delay);
+    
+  }, delay);
+};
+/**
+ * Init and load marquesine animation
+ */
+$(window).load(marquesineAnimation);
 /**
  * load events and transitions
  */
@@ -69,33 +121,23 @@ $('#nextTransitionButton').on('click', {
   exchangeNextPage: 'currentPage',
   exchangeHiddenPage: 'nextPage'
 }, transition);
-
 /**
- * core animation marquesine
+ * method to reset form
  */
-var marquesineAnimation =  function() {
-  var $marquesine = $('.home>.marquesine>ul');
-  $marquesine.css({width: $marquesine.find('li').length * 130});
-  setTimeout(function(){
-    $marquesine
-      .animate({
-        left: $marquesine.parent().width() - $marquesine.width() - 138
-      }, 6 * 1000)
-      .animate({
-        left: 0
-      }, 250);
-    setInterval(function(){
-      if ($('.home').hasClass('currentPage')) {
-        $marquesine
-          .animate({
-            left: $marquesine.parent().width() - $marquesine.width() - 138
-          }, 6 * 1000)
-          .animate({
-            left: 0
-          }, 250);
-      }
-    }, 6.5 * 1000);
-    
-  }, 500);
-};
-$(window).load(marquesineAnimation);
+function reset_form(e) {
+  $(e.data.selector)[0].reset();
+}
+$('#contact-form .cleanButton').on('click', {
+  selector: '#contact-form'
+}, reset_form);
+/**
+ * example of show modal experts
+ */
+/*
+$('.modal.show-experts .hideButton').on('click', function(){
+  $('.modal').hide();
+});
+$('.internal-page.us-our-experts>.body>.span-8-of-12>.wrapper>.container>img').on('click', function(){
+  $('.modal').show();
+});
+*/
