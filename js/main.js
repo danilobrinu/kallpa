@@ -56,7 +56,11 @@ function transition(e) {
     }, delay);
   };
   var hoverTransitionClear = function() {
-    $('#' + e.currentTarget.id).removeClass('hovered').text('');
+    if (e.currentTarget != undefined) {
+      $('#' + e.currentTarget.id).removeClass('hovered').text('');
+    } else {
+      console.log('Special Transition');
+    }
   };
   if (e.data.reverse == true) {
     previousTransition();
@@ -71,6 +75,82 @@ function transition(e) {
    */
   hoverTransitionClear();  
 }
+/**
+ * load events and transitions
+ */
+$('#previousTransitionButton').on('click', {
+  reverse: true,
+  exchangePreviousPage: 'currentPage',
+  exchangeCurrentPage: 'nextPage',
+  exchangeNextPage: 'hiddenPage',
+  exchangeHiddenPage: 'previousPage'
+}, transition);
+
+$('#nextTransitionButton').on('click', {
+  exchangePreviousPage: 'hiddenPage',
+  exchangeCurrentPage: 'previousPage',
+  exchangeNextPage: 'currentPage',
+  exchangeHiddenPage: 'nextPage'
+}, transition);
+/**
+ * Special transition to nav
+ */
+var $mainLink = $('.main-links a');
+var specialTransition = function() {
+  var currentPageIndex = $('.currentPage').data('index');
+  var page = $(this).attr('href').slice(1);
+  var $page = $('.' + page);
+  var pageIndex = $('.' + page).data('index');
+  var transitionSetting = {};
+  var previousTransitionSetting = {
+    reverse: true,
+    exchangePreviousPage: 'currentPage',
+    exchangeCurrentPage: 'nextPage',
+    exchangeNextPage: 'hiddenPage',
+    exchangeHiddenPage: 'previousPage'
+  };
+  var nextTransitionSetting = {
+    exchangePreviousPage: 'hiddenPage',
+    exchangeCurrentPage: 'previousPage',
+    exchangeNextPage: 'currentPage',
+    exchangeHiddenPage: 'nextPage'
+  };
+  if (currentPageIndex != pageIndex) {
+    if (currentPageIndex < pageIndex) {
+      /**
+       * next transition
+       */
+      $('.nextPage').addClass('hiddenPage').removeClass('nextPage');
+      if (!$page.hasClass('nextPage')) {
+        $page.addClass('nextPage').removeClass('previousPage').removeClass('hiddenPage');
+      }
+      transitionSetting = nextTransitionSetting;
+    } else {
+      /**
+       * previous transition
+       */
+      $('.previousPage').addClass('hiddenPage').removeClass('previousPage');
+      if (!$page.hasClass('previousPage')) {
+        $page.addClass('previousPage').removeClass('nextPage').removeClass('hiddenPage');
+      }
+      transitionSetting = previousTransitionSetting;
+    }
+    transition({data: transitionSetting});
+    setTimeout(function(){
+      $('.nextPage').addClass('hiddenPage').removeClass('nextPage');
+      $('.previousPage').addClass('hiddenPage').removeClass('previousPage');
+      var lasPageIndex = $('.page').length;
+      var previousPageIndex, nextPageIndex;
+      previousPageIndex = (pageIndex - 1) >= 1 ? (pageIndex - 1) : lasPageIndex;
+      nextPageIndex = (pageIndex + 1) <= lasPageIndex ? (pageIndex + 1) : 1;
+      // previous page setting
+      $('.page[data-index=' + previousPageIndex + ']').addClass('previousPage').removeClass('hiddenPage');
+      // next page setting
+      $('.page[data-index=' + nextPageIndex + ']').addClass('nextPage').removeClass('hiddenPage');
+    }, 500 * 2.6); // time effect transition => 500 * 2.5
+  }
+};
+$mainLink.on('click', specialTransition);
 /**
  * core animation marquesine
  */
@@ -104,23 +184,6 @@ var marquesineAnimation =  function() {
  * Init and load marquesine animation
  */
 $(window).load(marquesineAnimation);
-/**
- * load events and transitions
- */
-$('#previousTransitionButton').on('click', {
-  reverse: true,
-  exchangePreviousPage: 'currentPage',
-  exchangeCurrentPage: 'nextPage',
-  exchangeNextPage: 'hiddenPage',
-  exchangeHiddenPage: 'previousPage'
-}, transition);
-
-$('#nextTransitionButton').on('click', {
-  exchangePreviousPage: 'hiddenPage',
-  exchangeCurrentPage: 'previousPage',
-  exchangeNextPage: 'currentPage',
-  exchangeHiddenPage: 'nextPage'
-}, transition);
 /**
  * method to reset form
  */
