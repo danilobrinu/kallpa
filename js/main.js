@@ -159,20 +159,21 @@ var marquesineAnimation =  function() {
   $marquesine.css({
     width: $marquesine.find('li').length * 130
   });
-  var effectTime = 6 * 1000;
-  var delay = 500;
+  var effectTime = 30 * 1000; /* 30sec */
+  var delay = effectTime / 1000;
   var effect =  function() {
     $marquesine
       .animate({
-        left: $marquesine.parent().width() - $marquesine.width() - 138
-      }, effectTime)
-      .animate({
-        left: 0
-      }, delay / 2);
+        left: -$marquesine.width()
+      }, effectTime, 'easeInOutQuad');
+  };
+  var resetEffect = function() {
+    $marquesine.css('left', $('.home>.marquesine').width() - 138);
   };
   setTimeout(function(){
     effect();
     setInterval(function(){
+      resetEffect();
       if ($('.home').hasClass('currentPage')) {
         effect();
       }
